@@ -3,14 +3,13 @@ const Airport = require('../models/Airport');
 
 
 class AirportDao  {
-    static async addAirport({id, name, country, region, img_url}){
+    static async add(airport){
         return await dao.knex
-        insert({id, name, country, region, img_url})
+        insert(airport)
             .from('Aerport')
     }
 
-
-    static async update(id,{name, country, region, img_url}){
+    static async update(id, airport){
         return await dao.knex
         update({name,country, region, img_url})
             .from('Aerport')
@@ -42,4 +41,3 @@ class AirportDao  {
 }
 
 module.exports = AirportDao;
-
