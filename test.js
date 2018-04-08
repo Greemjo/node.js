@@ -9,6 +9,30 @@ async function main() {
         name: "Tashkent International Airport",
         country: "Uzbekistan",
         region: "Central Asia",
+        img_url: "http://192.168.13.239/jpg/airports/min/"
+      })
+    );
+    await AirportDao.add(
+      new Airport({
+        name: "London Hethrow Airport",
+        country: "UK",
+        region: "Europe",
+        img_url: ""
+      })
+    );
+    await AirportDao.add(
+      new Airport({
+        name: "Changi Airport",
+        country: "Singapore",
+        region: "Asia",
+        img_url: ""
+      })
+    );
+    await AirportDao.add(
+      new Airport({
+        name: "Domodedovo Airport",
+        country: "Russia",
+        region: "Europe",
         img_url: ""
       })
     );
