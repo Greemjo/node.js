@@ -5,6 +5,9 @@ class BaseDao {
   constructor(knex) {
     this.knex = knex;
   }
+  exit() {
+    this.knex.destroy();
+  }
 }
 
 module.exports = new BaseDao(knex(config));
