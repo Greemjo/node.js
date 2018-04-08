@@ -7,7 +7,6 @@ class AirportDao {
   }
 
   static async update(id, airport) {
-    console.log(id, airport)
     return await dao.knex("Aerport")
       .update(airport)
       .where({ id });
