@@ -1,8 +1,10 @@
 const AirportDao = require("./dao/AirportDao.js");
 const db = require("./dao/base");
+const Airport = require("./models/Airport")
 
 async function main() {
   try {
+    await AirportDao.add(new Airport({ name: "Tashkent International Airport", country: "Uzbekistan", region: "Central Asia", img_url: ""}) )
     console.log(await AirportDao.getList());
     // await PersonsDao.update(1, { country: "Russia" });
     // console.log(await PersonsDao.getById(5));
