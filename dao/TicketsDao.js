@@ -7,11 +7,14 @@ class TicketsDao  {
     static async add(ticket){
         let list = await dao.knex("Ticket").where({flight_id: ticket.flight_id});
         let flight = await flightDao.getById(ticket.flight_id);
-        if(list.length < flight.seat_count){
+        if(flight.status === "Waiting" && list.length < flight.seat_count){
             return await dao.knex("Ticket")
                     .insert(ticket)
         }
-        return false; 
+        if(flight.status === "Postponed")
+            throw "Flight is postponed";
+        else
+            throw "Tickets are not available!";
     }
 
     static async update(id, ticket){

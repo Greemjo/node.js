@@ -1,4 +1,3 @@
-//const AirCraftsDao = require('../../dao/AirCraftsDao');
 const AirportDao = require('../../dao/AirportDao');
 module.exports = async () => {
     try {
