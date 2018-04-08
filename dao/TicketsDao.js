@@ -3,7 +3,7 @@ const flightDao = require('./FlightDao')
 const Ticket = require('../models/Ticket');
 
 
-class AirportDao  {
+class TicketsDao  {
     static async add(ticket){
         let list = await dao.knex("Ticket").where({flight_id: ticket.flight_id});
         let flight = await flightDao.getById(ticket.flight_id);
