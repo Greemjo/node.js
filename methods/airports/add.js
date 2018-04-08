@@ -1,13 +1,11 @@
 const AirportDao = require('../../dao/AirportDao');
 
-module.exports = async params => {
+module.exports = async airport => {
     try {
-        return await AirportDao.add({id,name, country, region, img_url});
+        return await AirportDao.add(airport);
     } catch (error) {
         return Promise.reject({ message: error.message });
     }
 };
-
-
 
 
