@@ -1,9 +1,12 @@
-const TicketsDao = require('../../dao/TicketsDao');
+const Flight = require('../../dao/FlightDao');
 
 module.exports = async params => {
     try {
-        return await TicketsDao.getById(params.id);
+        return await Flight.addFlight(params);
     } catch (error) {
         return Promise.reject({ message: error.message });
     }
 };
+
+
+

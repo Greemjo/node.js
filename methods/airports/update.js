@@ -1,6 +1,6 @@
 const AirportDao = require('../../dao/AirportDao');
 
-module.exports = async (id, airport) => {
+module.exports = async ({id, airport}) => {
     try {
         return await AirportDao.update(id, airport);
     } catch (error) {
