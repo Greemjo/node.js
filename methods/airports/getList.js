@@ -1,6 +1,5 @@
-//const AirCraftsDao = require('../../dao/AirCraftsDao');
 const AirportDao = require('../../dao/AirportDao');
-module.exports = async params => {
+module.exports = async () => {
     try {
         return await AirportDao.getList();
     } catch (error) {
