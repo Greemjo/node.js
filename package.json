@@ -1,26 +1,27 @@
 {
-  "name": "unicon-study-nodejs",
+  "name": "team-1",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WebStyle/Unicon-study-NodeJS.git"
+    "url": "git+https://github.com/Greemjo/node.js.git"
   },
-  "author": "Farrukh Mamatkhalilov",
+  "author": "unicon-study-team-1",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/WebStyle/Unicon-study-NodeJS/issues"
+    "url": "https://github.com/Greemjo/node.js/issues"
   },
-  "homepage": "https://github.com/WebStyle/Unicon-study-NodeJS#readme",
+  "homepage": "https://github.com/Greemjo/node.js#readme",
   "dependencies": {
     "jayson": "^2.0.5",
     "knex": "^0.14.3",
     "lodash": "^4.17.5",
+    "nodemon": "^1.17.3",
     "pg": "^7.4.1",
     "require-dir": "^1.0.0"
   }
