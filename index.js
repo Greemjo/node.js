@@ -4,6 +4,11 @@ const _ = require('lodash');
 
 const collapse = require('./utils/collapse');
 
+
+
+
+
+
 const methods = requireMethods('./methods', {recurse: true});
 
 const map = _.reduce(methods, collapse('', '.'), {});
