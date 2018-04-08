@@ -25,13 +25,13 @@ class AirportDao  {
             .select()
             .where({ id })
             .first();
-        return new Airport(data);
+        return new Ticket(data);
     }
 
     static async getList() {
         const arr = await dao.knex("Ticket")
             .select();
-        return airport_arr.map(airport => new Airport(arr));
+        return arr.map(ticket => new Ticket(ticket));
     }
 
     static async delete(id) {
@@ -41,5 +41,5 @@ class AirportDao  {
     }
 }
 
-module.exports = AirportDao;
+module.exports = TicketsDao;
 
