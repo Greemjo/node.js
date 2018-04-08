@@ -7,4 +7,3 @@ module.exports = async params => {
     return Promise.reject({ message: error.message });
   }
 };
-
