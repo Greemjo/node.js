@@ -2,11 +2,8 @@ const jayson = require("jayson/promise");
 const requireMethods = require('require-dir');
 const _ = require('lodash');
 
+
 const collapse = require('./utils/collapse');
-
-
-
-
 
 
 const methods = requireMethods('./methods', {recurse: true});
