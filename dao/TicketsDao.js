@@ -4,12 +4,21 @@ const Ticket = require('../models/Ticket');
 
 
 class TicketsDao  {
-    static async add(ticket){
+
+    static async _isTicketAvailabel(ticket){
         let list = await dao.knex("Ticket").where({flight_id: ticket.flight_id});
         let flight = await flightDao.getById(ticket.flight_id);
-        if(flight.status === "Waiting" && list.length < flight.seat_count){
-            return await dao.knex("Ticket")
-                    .insert(ticket)
+        return list.length < flight.seat_count;
+    }
+
+    static async add(ticket){
+        
+        if(flight.status === "Waiting" && _isTicketAvailabel(ticket)){
+            let res = await dao.knex("Ticket")
+                        .insert(ticket);
+            if(_isTicketAvailabel(ticket)){
+                flightDao.updateStatus({id: ticket.flight_id, status: "SoldOut"})
+            }
         }
         if(flight.status === "Postponed")
             throw "Flight is postponed";
